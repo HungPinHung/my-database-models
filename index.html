@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="home.css">
+
+        <script src="home.js"></script>
+
+        <script src="identifier.js"></script>
+
+        <link href="__MODULE/Fontawesome/css/fontawesome.css" rel="stylesheet" />
+        <link href="__MODULE/Fontawesome/css/brands.css" rel="stylesheet" />
+        <link href="__MODULE/Fontawesome/css/solid.css" rel="stylesheet" />
+
+        <title>系統</title>
+    </head>
+    <body>
+        <div class="contentmenu hidden">
+            <div class="contentmenu_selection" onclick="history.back();close_contextmenu();">
+                <div class="selection_icon"></div>
+                <div class="selection_text">上一頁</div>
+            </div>
+            <div class="contentmenu_selection" onclick="window.history.forward();close_contextmenu();">
+                <div class="selection_icon"></div>
+                <div class="selection_text">下一頁</div>
+            </div>
+            <div class="contentmenu_selection" onclick="window.location.reload();close_contextmenu();">
+                <div class="selection_icon"></div>
+                <div class="selection_text">重新整理</div>
+            </div>
+            <div class="contentmenu_selection" onclick="Bomb();close_contextmenu();">
+                <div class="selection_icon"><i class="fa-solid fa-bomb"></i></div>
+                <div class="selection_text">轉身，有急事</div>
+            </div>
+
+            <div class="contentmenu_split_line"></div>
+
+            <div class="contentmenu_selection" onclick="window.print();close_contextmenu();">
+                <div class="selection_icon"><i class="fa-solid fa-print"></i></div>
+                <div class="selection_text">列印</div>
+            </div>  
+
+            <div class="contentmenu_split_line"></div>
+
+            <div class="contentmenu_selection" onclick="User_Layout();close_contextmenu();">
+                <div class="selection_icon"></div>
+                <div class="selection_text">使用者介面</div>
+            </div>
+            <div class="contentmenu_selection" onclick="Employee_Layout();close_contextmenu();">
+                <div class="selection_icon"></div>
+                <div class="selection_text">員工介面</div>
+            </div>
+
+            <div class="contentmenu_split_line"></div>
+
+            <div class="contentmenu_selection" onclick="switch_old_contextmenu();close_contextmenu();">
+                <div class="selection_icon"></div>
+                <div class="selection_text">切換舊版選單 (PC)</div>
+            </div>
+            <div class="contentmenu_selection" onclick="Toggle_Menu();close_contextmenu();">
+                <div class="selection_icon"><i class="fa-solid fa-bars"></i></div>
+                <div class="selection_text">呼叫導覽</div>
+            </div>
+            <div class="contentmenu_selection" onclick="close_contextmenu();">
+                <div class="selection_icon"><i class="fa-solid fa-square-xmark"></i></div>
+                <div class="selection_text">關閉選單</div>
+            </div>
+        </div>
+
+        <div class="top_Navigation">
+            <div class="left_navigation">
+                <img class="logo" web_identifier="web-icon">
+                <p class="logo_title" web_identifier="web-title"></p>
+            </div>
+
+            <div class="right_navigation">
+
+                <div class="search_block block_div disabled">
+                    <i class="fa-solid fa-magnifying-glass search_button"></i>
+                    <input type="text" class="search_input" placeholder="查找選單功能">
+                </div>
+
+                <div class="flex-bubble"></div>
+
+                <div class="selection_call_block block_button block_div" onclick="Toggle_Menu()">
+                    <i class="fa-solid fa-bars"></i>
+                    <p class="text">導覽</p>
+                </div>
+
+                <div class="user_block block_button block_div" onclick="Logout()">
+                    <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                    <p class="account_name">點此登出 : User</p>
+                </div>
+
+            </div>
+        </div>
+        <div class="main_box">
+            <div class="left_menu">
+                <div class="selection_block" selection_block_tag="user_menu">
+                    <p class="selection_block_title">使用者選單</p>
+                    <div class="selection_group">
+                        <div class="selection" onclick="switch_page('User_Data')"><i class="fa-solid fa-tachograph-digital"></i>資訊儀錶</div>
+                        <div class="selection" onclick="switch_page('User_Account')"><i class="fa-solid fa-users-viewfinder"></i>旗下帳號</div>
+                        <div class="selection" onclick="switch_page('User_Trade_Rec')"><i class="fa-regular fa-file-lines"></i>交易紀錄</div>
+                        <div class="selection" onclick="switch_page('Search_Trade_Rec')"><i class="fa-regular fa-file-lines"></i>帳號交易</div>
+                    </div>
+                </div>
+                <div class="selection_block" selection_block_tag="employee_menu">
+                    <p class="selection_block_title">員工選單</p>
+                    <div class="selection_group">
+                        <div class="selection" onclick="switch_page('Employee_Data')"><i class="fa-solid fa-tachograph-digital"></i>資訊儀錶</div>
+                        <div class="selection" onclick="switch_page('Employee_Account')"><i class="fa-solid fa-users-gear"></i>管理帳號</div>
+                        <div class="selection" onclick="switch_page('Employee_Trade_Rec')"><i class="fa-regular fa-file-lines"></i>交易紀錄</div>
+                    </div>
+                </div>
+                <div class="selection_block" selection_block_tag="admin_menu">
+                    <p class="selection_block_title">資料庫操作</p>
+                    <div class="selection_group">
+                        <div class="selection" onclick="switch_page('SQL_1')"><i class="fa-solid fa-wand-magic-sparkles"></i>查詢1</div>
+                        <div class="selection" onclick="switch_page('SQL_2')"><i class="fa-solid fa-wand-magic-sparkles"></i>查詢2</div>
+                        <div class="selection" onclick="switch_page('SQL_3')"><i class="fa-solid fa-wand-magic-sparkles"></i>查詢3</div>
+                        <div class="selection" onclick="switch_page('SQL_4')"><i class="fa-solid fa-wand-magic-sparkles"></i>查詢4</div>
+                        <div class="selection" onclick="switch_page('SQL_5')"><i class="fa-solid fa-wand-magic-sparkles"></i>查詢5</div>
+                    </div>
+                </div>
+                <!--<div class="selection_block" selection_block_tag="system_menu">
+                    <p class="selection_block_title">系統選單</p>
+                    <div class="selection_group">
+                        <div class="selection"><i class="fa-solid fa-pencil"></i>帳號修改</div>
+                    </div>
+                </div>
+                <div class="selection_block" selection_block_tag="other">
+                    <p class="selection_block_title">其他</p>
+                    <div class="selection_group">
+                        <div class="selection"><i class="fa-solid fa-copyright"></i>版權聲明</div>
+                        <div class="selection"><i class="fa-brands fa-github"></i>模板開源</div>
+                    </div>
+                </div>-->
+                <div class="selection_block" selection_block_tag="developer">
+                    <p class="selection_block_title">開發者按鈕</p>
+                    <div class="selection_group">
+                        <div class="selection" onclick="Employee_Layout()"><i class="fa-solid fa-user-tie"></i>員工介面</div>
+                        <div class="selection" onclick="User_Layout()"><i class="fa-solid fa-user"></i>使用者介面</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right_page">
+                <iframe class="page_frame" src="__PAGE/User_Data.html"></iframe>
+            </div>
+        </div>
+    </body>
+</html>

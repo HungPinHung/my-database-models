@@ -1,0 +1,10 @@
+{
+    "web-icon": {
+        "type":"image",
+        "content":"logo.png"
+    },
+    "web-title": {
+        "type":"text",
+        "content":"這啥銀行"
+    }
+}

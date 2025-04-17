@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="login.css">
+
+        <script src="login.js"></script>
+
+        <script src="identifier.js"></script>
+        
+        <title>登入</title>
+    </head>
+    <body>
+        <div class="center_box">
+            <img class="logo" web_identifier="web-icon">
+            <div class="title">
+              <p class="no_padding" web_identifier="web-title">
+                
+              </p>
+            </div>
+
+            <div class="split_land"></div>
+
+            <div class="select_permission">
+              <div class="permission_option selected" onclick="Switch_Permission(this)" Login_Role_tag="User">
+                <p class="no_padding">
+                  使用者
+                </p>
+              </div>
+
+              <div class="permission_option" onclick="Switch_Permission(this)" Login_Role_tag="Service">
+                <p class="no_padding">
+                  銀行人員
+                </p>
+              </div>
+            </div>
+
+            <div class="split_land"></div>
+
+            <div class="login_input_block">
+              <input type="text" class="login_input" placeholder="身分證字號" Login_Role_tag="SSN">
+
+              <div class="split_land"></div>
+
+              <input type="text" class="login_input" placeholder="帳號ID" Login_Role_tag="ID">
+
+              <div class="split_land"></div>
+
+              <input type="password" class="login_input" placeholder="密碼" Login_Role_tag="Password">
+            </div>
+
+            <div class="split_land"></div>
+
+            <div class="action_block">
+              <button class="action_button blue" onclick="Login()">
+                登入
+              </button>
+            </div>
+
+            <div class="split_land"></div>
+
+            <div class="copyright">
+              <p class="no_padding">
+                Make by CBB109121 TiiiM  2024
+              </p>
+            </div>
+        </div>
+    </body>
+</html>
